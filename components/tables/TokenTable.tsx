@@ -112,14 +112,12 @@ export default function TokenTable({ status }: TokenTableProps) {
                 {status === "PENDING" && (
                   <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
                     <Button
-                      size="sm"
                       onClick={() => handleStatusUpdate(token._id, "SERVED")}
                       className="bg-green-600 hover:bg-green-700 text-white px-3 py-1 text-xs"
                     >
                       Serve
                     </Button>
                     <Button
-                      size="sm"
                       onClick={() => handleStatusUpdate(token._id, "CANCELLED")}
                       className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 text-xs"
                     >
