@@ -1,5 +1,5 @@
 export const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+  process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
 
 export async function fetcher<T>(
@@ -10,6 +10,7 @@ export async function fetcher<T>(
     headers: {
       "Content-Type": "application/json",
     },
+    credentials: "include",
     ...options,
   });
 

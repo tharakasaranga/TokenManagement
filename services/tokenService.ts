@@ -3,7 +3,7 @@ import { Token, TokenResponse } from "../types";
 
 export const tokenService = {
   createToken: async (mobileNumber: string) => {
-    return fetcher<Token>("/tokens", {
+    return fetcher<Token>("/api/tokens", {
       method: "POST",
       body: JSON.stringify({ mobileNumber }),
     });
@@ -20,12 +20,12 @@ export const tokenService = {
       params.append("status", status);
     }
 
-    return fetcher<TokenResponse>(`/tokens?${params.toString()}`);
+    return fetcher<TokenResponse>(`/api/tokens?${params.toString()}`);
   },
 
  
   updateStatus: async (id: string, status: "SERVED" | "CANCELLED") => {
-    return fetcher<Token>(`/tokens/${id}`, {
+    return fetcher<Token>(`/api/tokens/${id}`, {
       method: "PUT",
       body: JSON.stringify({ status }),
     });
