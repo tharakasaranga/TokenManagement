@@ -10,7 +10,6 @@ export async function fetcher<T>(
     headers: {
       "Content-Type": "application/json",
     },
-    credentials: "include",
     ...options,
   });
 
